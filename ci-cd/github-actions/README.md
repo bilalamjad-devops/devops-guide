@@ -1,8 +1,4 @@
-Since you are a DevOps student, learning **GitHub Actions** is like learning how to give your code a "brain." Instead of you manually building and pushing Docker images, GitHub Actions does it for you every time you push code.
 
-In GitHub Actions, we don't just use "commands"—we use **Keywords** in a YAML file (located at `.github/workflows/main.yml`).
-
----
 
 ### 1. The Core Keywords (The "Grammar")
 
