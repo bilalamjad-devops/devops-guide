@@ -1,5 +1,4 @@
 
-Since you are writing this for your GitHub repository to help yourself and others, I have added **professional comments**. These comments explain *why* we are doing each step, which is what hiring managers love to see.
 
 ### 🚀 Production-Ready Multi-Stage Dockerfile (Node.js/React)
 
