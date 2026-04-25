@@ -1,13 +1,9 @@
 
 
 
-You have the right basic logic! But the example you wrote is a **Single-Stage** build. In a single-stage build, your final image includes all the "junk" (like `node_modules` and build tools) which makes it huge and slow.
 
-In a **Multi-Stage** build for React, we use Node.js to build the static files and then toss the Node.js environment away. We only keep the finished "dist" or "build" folder and put it inside **Nginx**.
 
-Here is the professional, multi-stage version for your GitHub repo:
-
-### 🚀 React Multi-Stage Dockerfile
+### React Multi-Stage Dockerfile
 
 ```dockerfile
 # STAGE 1: The Build Environment
