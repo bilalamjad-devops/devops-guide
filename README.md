@@ -11,7 +11,7 @@ If you can't run a simple Python script in a container locally, you shouldn't tr
 
 
 ### 2. The "No-Cost" Roadmap for 2026
-You mentioned you don't want to spend money. Here is how you do hands-on for free:
+
 * **Linux/Docker:** Use **WSL2** (Windows Subsystem for Linux) or **Killercoda** (Free interactive browser labs).
 * **Kubernetes:** Use **Minikube** or **Kind** on your own laptop. It costs $0.
 * **CI/CD:** Use **GitHub Actions**. It has a generous free tier for public repositories.
