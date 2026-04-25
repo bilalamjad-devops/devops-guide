@@ -1,7 +1,7 @@
 
 
 
----
+
 
 ### 🛡️ Lab 2: The "Security First" (Trivy Scan)
 **Goal:** Understand `uses` (pre-made tools) and how to protect your code.
