@@ -9,6 +9,18 @@ A **Volume** is like an external hard drive. You plug it into the container, and
 
 Since you want to include this in your blog or portfolio, I have refined the language to sound more professional while keeping the helpful analogies. This structure moves from **Concept** to **Logic** to **Hands-on Practice**.
 
+
+
+### The 3 Types of Volumes
+| Type | How it works | Best Use Case |
+| :--- | :--- | :--- |
+| **Anonymous Volume** | Docker manages it, but gives it a random name. | Temporary storage you don't care about. |
+| **Named Volume** | You give it a name (e.g., `db_data`). | **The most used in Industry.** Perfect for Databases. |
+| **Bind Mount** | You map a specific folder on your laptop (e.g., `/Users/me/project`) to the container. | **Development.** Great for seeing code changes instantly. |
+
+
+
+
 ---
 
 # 📦 Docker Volumes: The Persistence Layer
