@@ -52,6 +52,13 @@ Think of a container like a **Hotel Room**. If you leave your bags in the room a
 
 ---
 
+### 2. The Volume Syntax: Left vs Right
+This is the most important rule to memorize for your DevOps interviews. It is always:
+> **`-v <HOST> : <CONTAINER>`**
+
+* **Left Side (Host/Laptop):** This is where the data lives physically on your computer or where the Docker Volume is named.
+* **Right Side (Container):** This is the "Path" inside the Linux container where the app expects to find the data.
+
 
 
 
