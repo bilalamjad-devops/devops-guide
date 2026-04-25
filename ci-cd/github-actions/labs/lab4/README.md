@@ -1,19 +1,5 @@
 
 
-### 1. `workflow_dispatch` (The Manual Trigger)
-* **What it is:** Instead of running every time you `push` code, this workflow only runs when **you** click the "Run workflow" button in the GitHub Actions tab.
-* **Why Seniors use it:** In production, you might not want to deploy to AWS every single time you fix a typo in the README. This gives you **control**.
-
-### 2. `defaults: run:` (The "Don't Repeat Yourself" Rule)
-* **What it is:** It tells GitHub: "For every step in this job, assume I am working inside the `/frontend` (or `/backend`) folder."
-* **DevOps Benefit:** You don't have to write `cd frontend && ...` in every single step. It keeps the code clean.
-
-### 3. `${{ github.run_number }}` (Dynamic Tagging)
-* **What it is:** A built-in GitHub variable that counts how many times the workflow has run (e.g., 1, 2, 3...).
-* **DevOps Benefit:** Instead of always using `:latest`, this tags your image as `:1`, `:2`, etc. This is called **Immutable Tagging**. If version 5 breaks, you can easily roll back to version 4.
-
----
-
 ### 🚀 The Commented "Senior" Workflow
 
 I have added comments explaining the advanced parts:
