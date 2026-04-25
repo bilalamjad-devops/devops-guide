@@ -14,7 +14,7 @@ Think of a workflow like a **Recipe**:
 | **`uses`** | A pre-made tool | `actions/checkout@v4` (Someone else wrote this for you) |
 | **`run`** | Your custom command | `docker build -t my-app .` |
 
----
+
 
 Commit Date: 21-April-2026
 
