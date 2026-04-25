@@ -1,10 +1,6 @@
 
 
-To answer your first question: **Is this enough?** For a beginner, **yes**, these keywords are the "DNA" of GitHub Actions. If you master these, you can read 90% of the workflows on GitHub. However, to be "Job Ready," you need to understand **context** (secrets, environment variables, and conditions).
 
-To help you practice, here are **3 "Micro-Labs"** you should add to your repository. They start small and get more advanced.
-
----
 
 ### 🏗️ Lab 1: The "Hello World" (Basic Trigger)
 **Goal:** Understand how `on` and `run` work together.
