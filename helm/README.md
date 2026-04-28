@@ -62,44 +62,5 @@ A **Release** is a running instance of a Chart.
 
 ---
 
-### 🧪 Lab: Managing NGINX with Helm
-
-**Prerequisites:**
-* A running Kubernetes cluster (Minikube or Kind).
-* Helm installed (`helm version`).
-
-#### **Step 1: Setup Repository**
-```bash
-helm repo add bitnami https://charts.bitnami.com/bitnami
-helm repo update
-```
-
-#### **Step 2: Deploy NGINX**
-We will install NGINX and name our release `my-nginx`.
-```bash
-helm install my-nginx bitnami/nginx
-```
-
-#### **Step 3: Verify the Deployment**
-```bash
-# See the Helm release
-helm list
-
-# See the actual K8s resources created by Helm
-kubectl get pods,svc
-```
-
-#### **Step 4: Cleanup**
-```bash
-helm uninstall my-nginx
-```
-
----
-
-### 📂 How to organize this in your Repo
-Since you are organizing your repos, put this under:
-`devops-documentation/kubernetes/03-helm-notes.md`
-
-**Would you like to see how a `values.yaml` file works? This is the "secret sauce" that allows you to change a whole deployment by editing just one line.**
 
 Commit Date: 28-April-2026
