@@ -1,200 +1,178 @@
-Good — this is where your level actually starts moving from **beginner → intermediate**.
+Got it — you don’t need more theory, you need **clear + simple + step-by-step**.
 
-Lab 1 was just “install nginx”.
-👉 Lab 2 = **REAL DevOps skill (what companies expect)**
-
----
-
-# 🧪 Lab 2: Create and Customize Your Own Helm Chart
-
-## 🎯 Objective
-
-* Create your own Helm chart
-* Use `values.yaml`
-* Deploy same app with different configs (dev / prod mindset)
+I’ll simplify Lab 2 so it feels like **doing, not thinking**.
 
 ---
 
-## 🧠 What You Will Learn
+# 🧪 Lab 2 (Simple Version): Change App using Helm
 
-* How Helm charts are structured
-* How templating works
-* How to avoid hardcoding values
-* How real teams manage environments
+## 🎯 Goal (in one line)
 
----
-
-## 📋 Prerequisites
-
-* Kubernetes cluster (Minikube / Kind / EKS)
-* Helm installed
-* kubectl configured
+👉 Change number of pods using Helm (like real DevOps)
 
 ---
 
-## 🚀 Step 1: Create Helm Chart
+## 🚀 Step 1: Create Chart
 
 ```bash
 helm create my-app
 cd my-app
 ```
 
-This creates structure like:
-
-```
-my-app/
-  Chart.yaml
-  values.yaml
-  templates/
-    deployment.yaml
-    service.yaml
-```
+👉 Done. Don’t overthink structure.
 
 ---
 
-## 🚀 Step 2: Understand Important Files
-
-### values.yaml
-
-This is where you define variables:
-
-```yaml
-replicaCount: 1
-
-image:
-  repository: nginx
-  tag: latest
-
-service:
-  type: ClusterIP
-  port: 80
-```
-
----
-
-### templates/deployment.yaml
-
-You will see something like:
-
-```yaml
-replicas: {{ .Values.replicaCount }}
-```
-
-👉 This means:
-Helm will replace value from `values.yaml`
-
----
-
-## 🚀 Step 3: Deploy Chart
+## 🚀 Step 2: Run First Time
 
 ```bash
-helm install my-release ./my-app
-```
-
-Verify:
-
-```bash
-helm list
-kubectl get pods
-```
-
----
-
-## 🚀 Step 4: Change Configuration (VERY IMPORTANT)
-
-Now simulate **production change**
-
-Edit `values.yaml`:
-
-```yaml
-replicaCount: 3
-
-service:
-  type: LoadBalancer
-```
-
----
-
-## 🚀 Step 5: Upgrade Release
-
-```bash
-helm upgrade my-release ./my-app
+helm install my-app .
 ```
 
 Check:
 
 ```bash
 kubectl get pods
+```
+
+👉 You will see **1 pod running**
+
+---
+
+## 🚀 Step 3: Change Pods (IMPORTANT)
+
+Open file:
+
+```bash
+vi values.yaml
+```
+
+Find:
+
+```yaml
+replicaCount: 1
+```
+
+Change to:
+
+```yaml
+replicaCount: 3
+```
+
+Save file.
+
+---
+
+## 🚀 Step 4: Apply Change
+
+```bash
+helm upgrade my-app .
+```
+
+Now check:
+
+```bash
+kubectl get pods
+```
+
+👉 You will see **3 pods**
+
+✅ This is the **main concept of Helm**
+
+---
+
+## 🚀 Step 5: Change Service Type
+
+In `values.yaml`:
+
+```yaml
+service:
+  type: ClusterIP
+```
+
+Change to:
+
+```yaml
+service:
+  type: NodePort
+```
+
+Apply again:
+
+```bash
+helm upgrade my-app .
+```
+
+Check:
+
+```bash
 kubectl get svc
 ```
 
-👉 You will see:
+---
 
-* Pods increased (scaling)
-* Service type changed
+## 🚀 Step 6: Break + Fix (Rollback)
+
+Now break something (for learning):
+
+```bash
+helm upgrade my-app wrong-folder/
+```
+
+(It will fail)
+
+Now rollback:
+
+```bash
+helm history my-app
+helm rollback my-app 1
+```
+
+👉 Back to working state
 
 ---
 
-## 🚀 Step 6: Rollback (REAL INDUSTRY SCENARIO)
+## 🧠 What Just Happened (Simple)
 
-If something breaks:
+* You did NOT edit YAML manually
+* You only changed `values.yaml`
+* Helm updated everything
 
-```bash
-helm history my-release
-```
-
-Rollback:
-
-```bash
-helm rollback my-release 1
-```
+👉 This is why companies use Helm
 
 ---
 
-## 🧠 Real-World Use Case
+## 🔥 Real Meaning (Very Important)
 
-In companies:
+Without Helm:
 
-* `values-dev.yaml`
-* `values-staging.yaml`
-* `values-prod.yaml`
+* Edit 10 YAML files 😓
 
-Example:
+With Helm:
 
-```bash
-helm install my-app -f values-dev.yaml
-helm install my-app -f values-prod.yaml
-```
-
-👉 Same chart, different environments
-
----
-
-## 🔐 Best Practices
-
-* Never hardcode values in YAML
-* Always use `values.yaml`
-* Use separate files for environments
-* Use Helm rollback in CI/CD pipelines
+* Change 1 value 😎
 
 ---
 
 ## 🧹 Cleanup
 
 ```bash
-helm uninstall my-release
+helm uninstall my-app
 ```
 
 ---
 
-## 🔚 What You Achieved
+## 🧠 One Line Summary
 
-After this lab, you can:
-
-* Create Helm charts
-* Customize deployments
-* Handle real production changes
-* Rollback safely
+👉 Helm = “Change config → Run upgrade → Done”
 
 ---
 
+If you want, next I can make it even more real:
+
+👉 Lab 2.1 (very powerful):
+
+* Create `values-dev.yaml` and `values-prod.yaml`
+* Run same app in **2 environments**
+
+This is where you start thinking like **intermediate DevOps engineer**.
