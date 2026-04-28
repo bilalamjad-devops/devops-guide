@@ -1,6 +1,4 @@
-Your notes are already very strong because you’ve used the **APT analogy**, which is exactly how senior engineers explain it. I have polished the language to make it sound professional for your "DevOps Documentation" repo, added a "Senior Tip" section to explain the *real* reason we use Helm (Templating), and fixed the code block labels.
 
----
 
 # ☸️ Helm: The Kubernetes Package Manager
 
