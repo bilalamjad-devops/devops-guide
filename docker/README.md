@@ -29,4 +29,6 @@ We need to build image,
 
 etc
 
+To me, we should not use `docker run` command even if for simple application, we should use `compose-compose up --build`
+
 6-May-2026
