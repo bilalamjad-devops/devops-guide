@@ -17,7 +17,7 @@ We use Kubernetes, in this we use:
 - ingress
 - clusterissue
 
-All these things have value, but in this, we use Docker image. 
+All these things have value, but in this, we use **Docker image**. 
 
 If we do not have it, what we will do Kubernetes?
 
@@ -25,7 +25,7 @@ In Docker, we package our application.
 
 We need to build image, 
 
-docker-compose 
+**docker-compose**
 
 etc
 
